@@ -1,3 +1,9 @@
+/*
+This script creates the Bronze layer tables in the DataWarehouse.
+The Bronze layer stores raw and unprocessed data from CRM and ERP source systems.
+Existing tables are dropped before recreation to ensure a clean setup.
+These tables act as the foundation for further transformation in the Silver and Gold layers.
+*/
 -- Use the DataWarehouse database
 USE DataWarehouse;
 
