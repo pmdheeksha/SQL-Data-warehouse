@@ -1,3 +1,22 @@
+/*
+This script creates the Silver layer tables in the DataWarehouse.
+
+The Silver layer stores cleaned, transformed, and standardized data 
+that is loaded from the Bronze layer.
+
+These tables contain validated and structured data, including:
+- Deduplicated customer and product records
+- Standardized categorical values (gender, marital status, country)
+- Corrected financial calculations (sales, price)
+- Validated and formatted date fields
+- Cleaned and consistent IDs
+
+Existing Silver tables are dropped before recreation to ensure a clean setup.
+
+The Silver layer acts as an intermediate transformation layer 
+between raw Bronze data and the final analytical Gold layer.
+*/
+
 USE DataWarehouse;
 IF OBJECT_ID ('silver.crm_cust_info' , 'U') IS NOT NULL
 	DROP TABLE silver.crm_cust_info;
